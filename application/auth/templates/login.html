@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-md">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-7 col-sm-12">
+      <form method="POST" action="" class="shadow-lg login-form">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group m-3">
+          <legend class="m-3">Login</legend>
+          <div class="form-group m-3">
+            {{ form.username.label(lass="form-label") }}
+            {{ form.username(class="form-control") }}
+          </div>
+          <div class="form-group m-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
+          </div>
+          <div class="form-group m-3">
+            {{ form.remember_me }}
+            {{ form.remember_me.label(class="form-label") }}
+          </div>
+        </fieldset>
+        <div class="form-group m-4">
+          {{ form.submit(class="btn btn-primary m-4") }}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
