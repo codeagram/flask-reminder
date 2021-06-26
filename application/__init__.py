@@ -1,12 +1,12 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_apscheduler import APScheduler
 from flask_login import LoginManager
+from flask_apscheduler import APScheduler
 
 
-db = SQLAlchemy()
-scheduler = APScheduler()
 login = LoginManager()
+scheduler = APScheduler()
+db = SQLAlchemy()
 
 def init_app():
 
@@ -18,10 +18,20 @@ def init_app():
     else:
         app.config.from_object('config.DevConfig')
 
+    db.init_app(app)
+    scheduler.init_app(app)
+    scheduler.start()
+
+    def send_reminders():
+        A = SendReminder()
+        A.send_reminders()
+        print('Send Reminders')
+
+    app.app_context().push()
+
     with app.app_context():
 
-        db.init_app(app)
-        scheduler.init_app(app)
+        db.create_all()
         login.init_app(app)
         login.login_view = "auth_bp.login"
 
@@ -33,6 +43,14 @@ def init_app():
         app.register_blueprint(home_bp)
         app.register_blueprint(auth_bp)
 
-        #from .tasks.job import send_reminders
+
 
     return app
+
+
+from .task.job import SendReminder
+
+def send_reminders():
+    A = SendReminder()
+    A.send_reminders()
+    print('Send Reminders')

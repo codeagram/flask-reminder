@@ -5,7 +5,7 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(#cfd9df, #e2ebf0);
 }
 
@@ -23,7 +23,8 @@ body {
   margin-top: 15%; 
 }
 .reminders-table {
-  min-height: 90vh;
+  min-height: 85vh;
+  overflow: scroll;
 }
 
 .footer {

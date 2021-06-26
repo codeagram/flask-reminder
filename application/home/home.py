@@ -46,7 +46,7 @@ class EditReminder:
 
     def get_reminder(self):
 
-        reminder = Reminder.query.filter_by(unique_key=RemKey).first()
+        reminder = Reminder.query.filter_by(unique_key=self.RemKey).first()
 
         return reminder
 

@@ -1,9 +1,17 @@
+from .. import db
+from ..models import User, Reminder
+from secrets import token_hex
+from datetime import datetime
+import requests
+import socket
+
+
 class SendReminder:
 
     def get_reminders(self):
 
         sendable_reminders = []
-        total_reminders = Reminder.query.all()
+        total_reminders = db.session.query(Reminder).all()
         time_now = datetime.now()
 
         for reminder in total_reminders:

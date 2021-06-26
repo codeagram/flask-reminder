@@ -27,9 +27,6 @@
     <div class="col-sm-12 col-md-5">
       <h2>All Reminders</h2>
     </div>
-    <div class="col-sm-12 col-md-5">
-      <h2>Total Reminders Found: {{ reminders.count() }}</h2>
-    </div>
   </div>
   <table class="table table-success table-striped ml-4 p-4">
     <tr>
@@ -61,7 +58,8 @@
     {% endfor %}
   </table>
 </div>
-<div class="container-fluid bg-dark footer">
+<div class="container-fluid bg-dark text-white footer align-items-center justify-content-center">
+      <p>Total Reminders Found: {{ reminders.count() }}</p>
 </div>
 </div>
 </div>

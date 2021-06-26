@@ -61,13 +61,16 @@
   </div>
 
   {% if reminder %}
+  <h1>Hi</h1>
   <script>
   
     function prePollute() {
     
-      let send = '{{sender}}';
-      let cont = '{{content}}';
-      let dt = '{{reminder_datetime}}';
+      let send = '{{reminder.sender}}';
+      let cont = '{{reminder.content}}';
+      let dt = '{{reminder.reminder_datetime}}';
+
+      alert(send);
 
       document.forms[0].sender.value = send;
       document.forms[0].content.value = cont;

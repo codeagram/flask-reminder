@@ -13,6 +13,7 @@ class Config:
     PASSWORD = os.getenv('PASSWORD')
     SQLALCHEMY_DATABASE_URI = f"postgresql+psycopg2://{USERNAME}:{PASSWORD}@localhost:5432/remindersapp"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SCHEDULER_API_ENABLED = True
 
 
 class ProdConfig(Config):

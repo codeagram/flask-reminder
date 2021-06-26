@@ -78,7 +78,7 @@ def load_user(id):
     return Administrator.query.get(int(id))
 
 
-db.create_all()
+#db.create_all()
 
 
 def user_pollute():
@@ -118,5 +118,5 @@ def admin_pollute():
     db.session.close()
 
 
-user_pollute()
-admin_pollute()
+#user_pollute()
+#admin_pollute()
