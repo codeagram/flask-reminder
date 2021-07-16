@@ -118,5 +118,5 @@ def admin_pollute():
     db.session.close()
 
 
-#user_pollute()
-#admin_pollute()
+user_pollute()
+admin_pollute()
