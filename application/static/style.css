@@ -14,7 +14,8 @@ body {
 }
 
 .reminder-form, .login-form {
-  margin: auto;
+  width: 70%;
+  margin: 0 auto;
   background-color: #fff;
   font-weight: bold;
 }
@@ -28,5 +29,5 @@ body {
 }
 
 .footer {
-  min-height: 5vh;
+  min-height: 4vh;
 }

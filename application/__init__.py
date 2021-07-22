@@ -46,5 +46,5 @@ def send_reminders():
     print('Send Reminders')
 
 
-scheduler.add_job(trigger="interval", id="send", seconds=5, func=send_reminders)
-scheduler.start()
+#scheduler.add_job(trigger="interval", id="send", seconds=5, func=send_reminders)
+#scheduler.start()
