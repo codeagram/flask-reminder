@@ -11,7 +11,7 @@ class Config:
     SECRET_KEY = os.urandom(64)
     USERNAME = os.getenv('USERNAME')
     PASSWORD = os.getenv('PASSWORD')
-    SQLALCHEMY_DATABASE_URI = f"postgresql+psycopg2://{USERNAME}:{PASSWORD}@localhost:5432/remindersapp"
+    SQLALCHEMY_DATABASE_URI = "sqlite:memory"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SCHEDULER_API_ENABLED = True
 
